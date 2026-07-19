@@ -1,0 +1,180 @@
+/* ============================================
+   style.css — Estilos propios (sobre Bootstrap)
+   ============================================ */
+
+:root {
+  --color-dark: #0d1225;
+  --color-dark-2: #161b33;
+  --color-accent: #2563eb;
+  --color-accent-light: #3b82f6;
+  --color-text: #1f2333;
+
+  /* Paleta complementaria */
+  --color-teal: #0d9488;
+  --color-teal-bg: #ccfbf1;
+  --color-purple: #7c3aed;
+  --color-purple-bg: #ede9fe;
+  --color-amber: #d97706;
+  --color-amber-bg: #fef3c7;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+}
+
+h1, h2, h3, .navbar-brand {
+  font-weight: 700;
+}
+
+/* ---------- Navbar principal ---------- */
+.custom-navbar {
+  background-color: var(--color-dark);
+}
+
+/* ---------- Hero / encabezado de página ---------- */
+.page-hero {
+  background-color: var(--color-dark);
+  background-image:
+    radial-gradient(circle, #2a3355 1px, transparent 1px),
+    linear-gradient(120deg, #0d1225 0%, #1e1b4b 55%, #1d2b64 100%);
+  background-size: 20px 20px, cover;
+  color: #fff;
+  padding: 3.5rem 0 3rem;
+}
+
+.accent-bar {
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-accent);
+  margin-top: 1rem;
+  border: none;
+}
+
+/* ---------- Sub-navegación (solo página de contenido) ---------- */
+.subnav {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.subnav .nav-link {
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.subnav .nav-link.active,
+.subnav .nav-link:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- Tarjetas de contenido ---------- */
+.content-card {
+  border-left: 4px solid var(--color-accent);
+  background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-radius: 0.375rem;
+}
+
+.icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.icon-circle.teal   { background-color: var(--color-teal-bg);   color: var(--color-teal); }
+.icon-circle.purple { background-color: var(--color-purple-bg); color: var(--color-purple); }
+.icon-circle.amber  { background-color: var(--color-amber-bg);  color: var(--color-amber); }
+
+/* Tarjetas con borde de color alterno */
+.content-card.border-teal   { border-left-color: var(--color-teal); }
+.content-card.border-purple { border-left-color: var(--color-purple); }
+.content-card.border-amber  { border-left-color: var(--color-amber); }
+
+/* Insignia de sección (arriba de cada título) */
+.section-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50rem;
+  margin-bottom: 0.75rem;
+}
+.section-badge.blue   { background-color: rgba(37,99,235,.1);  color: var(--color-accent); }
+.section-badge.teal   { background-color: var(--color-teal-bg);   color: var(--color-teal); }
+.section-badge.purple { background-color: var(--color-purple-bg); color: var(--color-purple); }
+.section-badge.amber  { background-color: var(--color-amber-bg);  color: var(--color-amber); }
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
+footer a {
+  color: #cbd5e1;
+}
+
+/* ---------- Accesibilidad: foco visible ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.nav-link:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 2px;
+}
+
+/* ---------- Botón primario propio ---------- */
+.btn-brand {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+/* ---------- Respaldo: imágenes nunca se desbordan ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---------- Imágenes de contenido: tamaño mediano, centradas ---------- */
+.img-content {
+  display: block;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .img-content {
+    max-width: 80%;
+  }
+}
+
+.content-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
